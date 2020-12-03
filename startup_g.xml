@@ -1,0 +1,90 @@
+<Cluster>
+<Name>output cluster</Name>
+<NumElts>20</NumElts>
+<Refnum>
+<Name>CPX400DP Power Supply</Name>
+<RefKind>IVI</RefKind>
+<Val>COM12</Val>
+</Refnum>
+<Refnum>
+<Name>NSE Processor Board</Name>
+<RefKind>VISA</RefKind>
+<Val>COM7</Val>
+</Refnum>
+<Refnum>
+<Name>EPOS2 Motor Controller</Name>
+<RefKind>VISA</RefKind>
+<Val>COM9</Val>
+</Refnum>
+<Refnum>
+<Name>Arduino Nano</Name>
+<RefKind>VISA</RefKind>
+<Val>COM10</Val>
+</Refnum>
+<I32>
+<Name>Motor 1 RPM In</Name>
+<Val>4000</Val>
+</I32>
+<DBL>
+<Name>Motor 2 Voltage In</Name>
+<Val>15.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>Motor 2 Max Current In</Name>
+<Val>1.00000000000000</Val>
+</DBL>
+<EW>
+<Name>Regulation Mode Enum</Name>
+<Choice>PID Regulation</Choice>
+<Choice>Fixed PWM</Choice>
+<Val>1</Val>
+</EW>
+<DBL>
+<Name>Torque Duty Cycle (%)</Name>
+<Val>50.00000000000000</Val>
+</DBL>
+<U16>
+<Name>PWM Frequency (Hz)</Name>
+<Val>40</Val>
+</U16>
+<SGL>
+<Name>Proportional Gain Factor</Name>
+<Val>0.00000</Val>
+</SGL>
+<SGL>
+<Name>Integral Gain Factor</Name>
+<Val>0.00000</Val>
+</SGL>
+<SGL>
+<Name>Derivative Gain Factor</Name>
+<Val>0.00000</Val>
+</SGL>
+<SGL>
+<Name>Tool Face Target Angle</Name>
+<Val>0.00000</Val>
+</SGL>
+<I32>
+<Name>Motor RPM High</Name>
+<Val>2000</Val>
+</I32>
+<I32>
+<Name>Motor RPM Low</Name>
+<Val>1000</Val>
+</I32>
+<U32>
+<Name>Motor Acceleration</Name>
+<Val>200</Val>
+</U32>
+<U32>
+<Name>Motor Deceleration</Name>
+<Val>200</Val>
+</U32>
+<U32>
+<Name>NSE Processor Board Poll Delay</Name>
+<Val>200</Val>
+</U32>
+<U32>
+<Name>Poll Buttons</Name>
+<Val>33554439</Val>
+</U32>
+</Cluster>

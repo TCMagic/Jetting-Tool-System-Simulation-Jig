@@ -1,0 +1,193 @@
+1.2.0.17 - OJO - 21.04.2016:
+* Set Tool Face Angle Timeout (ms) control default value to 500 ms.
+
+1.2.0.16 - OJO - 28.01.2016:
+* Removed DLL modifications in 1.2.0.15, as this didn't work properly.
+  The CPX400DP driver must be installed on the computer running the application!!
+
+1.2.0.15 - OJO - 28.01.2016:
+* Modified CPX400DP driver VI, so that the CPX400DP_32.dll file is included in the build.
+* Wired DLL file path output from modified CPX400DP driver VI to sequence structure,
+  so that the Main.vi code will fail if the CPX400DP driver is reinstalled
+  (e.g. in the event of a new LabVIEW version).
+* Added a control for setting the timeout of the Toolface Angle poll command.
+
+1.2.0.14 - OJO - 12.01.2016:
+* Sensor Calibration: Changed Destination ID to 0x84 and increased timeout of Read Sensor Data command.
+
+1.2.0.13 - OJO - 11.01.2016:
+* Added Signal Noise Ration polling and logging to file.
+* Added Toolface Alignment getting and setting.
+
+1.2.0.12 - OJO - 11.01.2016:
+* Added Toolface Angle Steer Deviation polling and logging to file.
+
+1.2.0.11 - OJO - 06.01.2016:
+* Added Set Steering Mode command.
+
+1.2.0.10 - OJO - 05.01.2016:
+* Sensor Calibration: Fixed bug causing failure when reading sensor calibration file.
+
+1.2.0.9 - OJO - 23.12.2015:
+* Read Processor Board Flash: Fixed app crashing when selecting USB without serial port selected (closes #142).
+
+1.2.0.8 - OJO - 22.12.2015:
+* Added polling of Tool Face Angle standard deviation and averaged (0x7D).
+* Added logging of polled Tool Face Angle stdev and avg to file.
+
+1.2.0.7 - OJO - 17.12.2015:
+* Sensor Calibration: Added header check and index number check when reading calibration files.
+* Sensor Calibration: Fixed writing of column headers when writing calibration files.
+
+1.2.0.6 - OJO - 09.12.2015:
+* Modified 8-bit RX routine to receive all bytes in two steps rather than one by one byte.
+* Sensor Calibration: Fixed bug in the Write to file function.
+
+1.2.0.5 - OJO - 09.12.2015:
+* Added Sensor Calibration tab.
+* Sensor Calibration: Added reading of sensor calibration file to listbox control.
+* Sensor Calibration: Added writing contents of listbox control to file.
+* Sensor Calibration: Added reading of stored calibration from board to listbox control.
+* Sensor Calibration: Added erasing of stored calibration on board.
+* Sensor Calibration: Added writing contents of listbox control to board.
+* Made a Upper Section CPU board simulator.
+
+1.1.3.4 - OJO - 09.10.2015:
+* Changed desimal places from 3 to 4 in floating point values in Jetting Data in log files.
+
+1.1.3.3 - OJO - 09.10.2015:
+* Changed desimal places from 1 to 4 in G* and H* values in Jetting Data.
+
+1.1.3.2 - OJO - 07.10.2015:
+* Changed data types in processing of Jet Data replies from U16 to float.
+
+1.1.3.1 - OJO - 22.04.2015:
+* Changed bypassing of checking of Command ID's to only bypass checking of Command ID
+  if the transmitted command is of type Request RTCC (0x31).  Otherwise the Command ID
+  will be checked, and the received data will be discarded if there is a mismatch.
+
+1.1.2.1 - OJO - 22.04.2015:
+* Bypassed checking of Command ID, due to problems with FW
+  (Request RTCC reported wrong Command ID) when TKK was at test facility in Houston.
+* Added logging of Tool Inclination and Tool Azimuth to file.
+* Fixed tab delimiting bug in file logging functionality.
+
+1.1.1.1 - OJO - 08.04.2015:
+* Added setting of 2nd derivative gain factor.
+* Added command ID check when receiving replies.
+* Flushing UART buffer prior to sending commands.
+
+1.1.0.1 - OJO - 18.03.2015:
+* Converted project to LabVIEW 2014.
+* Added showing of all Jet Data during polling (including GX, GY, GZ, HX, HY and HZ).
+* Added polling of inclination and azimuth.
+* Added centering of communication log window.
+
+1.0.15.1 - OJO - 04.03.2015:
+* Added USB/RS485 choice when connecting to NSE Processor Board.
+* Added 8-bit communication in ordinary setting/polling communication in PWM/regulation mode.
+
+1.0.14.2 - OJO - 25.02.2015:
+* Changed header in status log file.
+* Added mud pulse downling flash read functionality.
+
+1.0.13.3 - OJO - 23.02.2015:
+* Fixed bug in Enable Streaming Turbine Current functionality.
+
+1.0.13.2 - OJO - 05.09.2014:
+* Small modifications to the Read Flash routines.
+
+1.0.13.1 - OJO - 04.09.2014:
+* Modified 9 bit communication routine.  Will now set the DisableErrorReplacement setting
+  in visaconf.ini at application startup, to prevent the VISA Read function from replacing
+  the received byte when a parity error happens (9th bit set/reset, depending on parity setting).
+* Added functionality for reading CPU board flash directly from the USB connector,
+  using standard VISA 8 bit communication.
+
+1.0.12.1 - OJO - 28.08.2014:
+* Fixed bug where the program at startup automatically tried to read number of bytes at
+  NSE processor board serial port, regardless of the port being open or not.
+* Added polling of temperature values.
+* Added logging of polled temperature values to file.
+
+1.0.11.1 - OJO - 24.06.2014:
+* Added reading of CPU1 and CPU2 SW version strings when connecting to the CPU2 board.
+
+1.0.10.11 - OJO - 18.06.2014:
+* Added functionality to filter out falsely high current measurements in mud pulse mode.
+
+1.0.10.10 - OJO - 18.06.2014:
+* Current measurement commands in mud pulse mode will now be added to the communication log.
+
+1.0.10.9 - OJO - 11.06.2014:
+* Increased turbine current measurement chart history buffer length to 1,000,000 values.
+
+1.0.10.8 - OJO - 10.06.2014:
+* Added Average Turbine Speed Comp. read-out in mud pulse mode.
+
+1.0.10.7 - OJO - 06.06.2014:
+* Added Turbine Speed Compensation read-out in mud pulse mode.
+
+1.0.10.6 - OJO - 06.06.2014:
+* Removed checking if motor is running when detecting a new state
+  on Arduino Nano pin D13, to avoid adding delay in RPM adjustments.
+* Renamed Global Functional Variable sub-VI's from "FGV" to "GFV".
+* Changed to use unaveraged current measurements when setting RPM in mud pulse mode.
+
+1.0.10.5 - OJO - 06.06.2014:
+* Modified routine for adjusting RPM according to Arduino Nano pin D13:
+  When a D13 pin change occurs, the loop Will now adjust global RPM value
+  every 50ms, rather than setting the RPM every 500ms.
+* Inverted the value of the Arduino Pin D13, to better represent reality
+  (ie. high pin D13 -> low RPM, and low pin D13 -> high RPM.
+* Added an Invert Arduino Pin D13 control.
+
+1.0.10.4 - OJO - 04.06.2014:
+* Set turbine current measurement averaging number to 3 measurements.
+
+1.0.10.3 - OJO - 04.06.2014:
+* Removed a bunch of motor controller set parameter sub-VI's to lower
+  the set velocity time delay.
+
+1.0.10.2 - OJO - 04.06.2014:
+* Changed CPX400DP power supply channel 1 voltage from 48V to 60V.
+* Modified DLL call in EPOS2 sub-VI to run in any thread: VCS Activate Profile Velocity Mode.vi
+* Modified DLL call in EPOS2 sub-VI to run in any thread: VCS Set Velocity Profile.vi
+* Modified DLL call in EPOS2 sub-VI to run in any thread: VCS Move With Velocity.vi
+* Modified DLL call in EPOS2 sub-VI to run in any thread: VCS Wait For Target Reached.vi
+
+1.0.10.1 - OJO - 04.06.2014:
+* Modified turbine current measurements from polling to streaming.
+* Added averaging of turbine current measurements.
+* Added filtering of start bytes without 9th bit set in PB2 RX routine.
+
+1.0.9.1 - OJO - 30.05.2014:
+* Added start acceleration / stop deceleration functionality.
+* Added graph for visualizing turbine current measurements in mud pulse mode.
+* Fixed a clear log bug in the Communication Log window.
+
+1.0.8.2 - OJO - 28.05.2014:
+* Increased Read Flash Lookup Table timer from 20 to 60 seconds.
+* Added support for reading out multiple selected log sessions.
+* Disabled logging to Communication Log when reading from Processor Board flash.
+* Added support for selecting NSE Processor Board connection baud rate.
+* Added support for Set Baud Rate (0xF6) command.
+
+1.0.6.1 - OJO - 26.05.2014:
+* Added RPM offset functionality due to turbine current in Mud Pulse mode.
+
+1.0.5.1 - OJO - 22.05.2014:
+* Added support for Request Turbine Current (0x7B) command.
+* Added support for Request Turbine Voltage (0x7C) command.
+
+1.0.4.1 - OJO - 21.05.2014:
+* Fixed bug: LSB and MSB was swapped in Get Jet Data command.
+
+1.0.3.2 - OJO - 15.05.2014:
+* Added changelog.txt file to project.
+* Added support for Build / Turn Rate command.
+* Added support for Target Azimut command.
+* Added support for Target Inclination command.
+* Added Command String functionality.
+* Added Debug tab.
+* Added Generic Command TX and RX functionality.
